@@ -24,6 +24,7 @@ This web app supports 6 profile types:
 * <p> Node.js</p>
 * <p> Express.js</p>
 * <p> Node.js</p>
+* <p> EJS</p>
 * [OpenUv.io API](https://www.openuv.io/dashboard)
 * [GeoName API](https://www.geonames.org/export/web-services.html)
 
