@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Lisper</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Titan+One&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
+
+</head>
+
+<body>
+  <main>
+    <h1 id="loading">Loading...</h1>
+    <div id="content" style="display: none;">
+      <h1>UV Tracker</h1>
+      <div class="card">
+        <form id="countryForm" action="/select-city" method="get">
+          <label for="country">Select Your Country</label><br />
+          <select name="country" id="country" required>
+            <!-- Options will be inserted here by JavaScript -->
+          </select>
+          <button type="submit">Continue</button>
+        </form>
+      </div>
+    </div>
+    <p id="error" style="display: none;"></p>
+  </main>
+<script>
+  document.addEventListener("DOMContentLoaded", async () => {
+    try {
+      const response = await fetch('/countries');
+      const data = await response.json();
+
+      if (data.error) {
+        document.getElementById('error').innerText = data.error;
+        document.getElementById('error').style.display = 'block';
+        document.getElementById('loading').style.display = 'none';
+      } else {
+        const countries = data.countries;
+        const select = document.getElementById('country');
+
+        countries.forEach(item => {
+          const option = document.createElement('option');
+          option.value = item.geonameId;
+          option.textContent = item.countryName;
+          select.appendChild(option);
+        });
+
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('content').style.display = 'block';
+      }
+    } catch (error) {
+      document.getElementById('error').innerText = 'An error occurred while loading the countries.';
+      document.getElementById('error').style.display = 'block';
+      document.getElementById('loading').style.display = 'none';
+    }
+  });
+  document.getElementById('countryForm').addEventListener('submit', function(event) {
+      const selectedCity = document.getElementById('country').value;
+      const url = `/select-city?country=${selectedCity}`;
+      window.location.href = url; // Redirect to /select-city with city parameter
+      event.preventDefault(); // Prevent default form submission
+    });
+</script>
+</body>
+
+
+</html>
