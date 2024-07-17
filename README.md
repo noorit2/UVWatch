@@ -1,6 +1,6 @@
-# UV-Tracker
+# UVWatch
 # Describtiom
-Academic Path System - is an express app that enable users to select thier country and city to check UV index, what SPF to use, and other information. 
+UVWatch- is an express app that enables users to select their country and city to check the UV index, what SPF to use, and other information. 
 <br/>
 
 This project includes both client-side and server-side rendering
