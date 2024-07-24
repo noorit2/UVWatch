@@ -1,6 +1,7 @@
 # UVWatch
 # Description
-UVWatch- is an express app that enables users to select their country and city to check the UV index, what SPF to use, and other information. 
+UVWatch- is an Express app that enables users to select their country and city to check the UV index, what SPF to use, and other information. 
+The application fetches country/city and UV index information using two APIs mentioned in the technologies-used list below.
 <br/>
 
 This project includes both client-side and server-side rendering
