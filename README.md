@@ -12,7 +12,6 @@ This project includes both client-side and server-side rendering
 
 
 # Project Setup
-This web app supports 6 profile types:
 1. Home Page
 ![localhost_3000_(Nest Hub Max) (4)](https://github.com/user-attachments/assets/8bd30845-86d0-47e5-a422-0c4c6ae52c7d)
 2. Select City Page
@@ -24,7 +23,6 @@ This web app supports 6 profile types:
 # Technologies Used
 * <p> Node.js</p>
 * <p> Express.js</p>
-* <p> Node.js</p>
 * <p> EJS</p>
 * [OpenUv.io API](https://www.openuv.io/dashboard)
 * [GeoName API](https://www.geonames.org/export/web-services.html)
